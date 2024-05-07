@@ -16,7 +16,7 @@ const AllBookings = () => {
         //     .then(data => {
         //         setBookings(data)
         //})
-        axios.get(`${serverLink}/bookings?email=${user?.email}`)
+        axios.get(`${serverLink}/bookings?email=${user?.email}`, { withCredentials: true })
             .then(res => {
                 setBookings(res.data)
             })

@@ -27,10 +27,7 @@ const Login = () => {
                 axios.post('http://localhost:5000/jwt', { user }, { withCredentials: true })
                     .then(res => {
                         console.log(res.data);
-                        if (res.data.success) {
-                            location?.state ? navigate(location?.state?.from?.pathname) : navigate('/')
-                            toast.success('Login success')
-                        }
+                        toast.success('Login success')
                     })
             })
             .catch(error => { console.log(error); })
